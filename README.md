@@ -8,6 +8,13 @@ Specifically designed for the RP2040 it has been tested on RP2040-Zero. (RP2040 
 Up to 4 PPM streams can be managed on the same processor.  
  
  The library can handle PPM frames with up to 16 channels but usual RC PPM signals use less channels. A high number of channels may require some specific timing tuning. ([see Fine tunning chapiter](#tuning))  
+
+ ## Remarks on used resources ##
+Resources allocation is made dynamically at runtime and RP2040_ppm checks for PIO’s resources already used by others libraries.  
+For each ppm stream the library uses a state machine SM and a PIO interrupt line. (A PIO has 2 interrupt lines. The RP2040 has 2 PIOs and so the library can handle at most 4 concurrent ppm streams.)  
+Only unused PIO/SM/Interrupt are selected at runtime and used.    
+RP2040_ppm should be able to cohabit with other modules using PIO resources.  
+
 ## Usage: 
 ### Include  
 `#include <RP2040_ppm.h>`    
