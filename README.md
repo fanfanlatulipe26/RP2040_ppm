@@ -39,11 +39,11 @@ ppmArray[2] = 1300;	//	value for channel 2
 …
 ```
 Channel numbering is from 1 to n and index 0 of the array is used internally.  
-*No checks* are made upon the values of the ppm channels. (usual values are between 1000 and 2000 us …), nor the channel number.  
+*No checks* are done upon the values of the ppm channels. (usual values are between 1000 and 2000 us …), nor the channel number.  
 **start()**   
 start the PPM generation.    
 **stop()**  
-  stop the PPM generation. It can be resumed with **start()** 
+  stop the PPM generation. It can be resumed with **start()**   
 **end()**  
   stop the PPM generation and free resources. The PPM stream must be reinitialized with a **begin(….)** before use.  
 
