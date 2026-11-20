@@ -28,14 +28,16 @@ Polarity must be RISING or FALLING . (**default RISING**)
 **begin(tx_Pin, nbr_TX_Channels )**  
 Initialize the PPM stream generated on GPIO tx_pin, with nbr_TX_Channels channels. (**default 8**).
 The generation of the pulses must be started effectively with **start()**.   
-The method returns a pointer to an array of integers where the user updates the values of each channel in microseconds (us).  
+The method returns type **ppmChannels_t**  , in fact a pointer to an array the user updates the values of each channel in microseconds (us).  
 Returns NULL if an error occurs.
 ```
-int* ppmArrayTX;
-ppmArray = monPPM_TX.begin(19);  // 8 channels ppm stream on pin 19
+ppmChannels_t channels; // the array for channels value
+ppmWriter myPPM_TX;
 …
-ppmArray[1] = 1200;	//	value for channel 1
-ppmArray[2] = 1300;	//	value for channel 2
+channels = monPPM_TX.begin(4);  // 8 channels ppm stream on pin 4
+…
+channels[1] = 1200;	//	value for channel 1
+channels[2] = 1300;	//	value for channel 2
 …
 ```
 Channel numbering is from 1 to n and index 0 of the array is used internally.  
