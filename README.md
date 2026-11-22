@@ -1,8 +1,10 @@
 # RP2040_ppm
-ppm encoder for  Raspberry Pi RP2040. Based on PIO peripheral of RP2040.
+ppm encoder for  Raspberry Pi RP2040. Based on PIO peripheral of RP2040. **(RP2040 PPPM reader/decoder comming soon...)**  
 
+##RP2040 PPPM reader/decoder comming soon...## 
 ## RP2040_ppm
 **_RP2040_ppm_** is a library that provides **coding of PPM signals** widely used in RC transmitters and receivers equipments.   
+**RP2040 PPPM reader/decoder comming soon...**  
 The library uses the **Programmable I/O (PIO) hardware subsystem** of the RP2040 and output waveforms are managed by the hardware, requesting only a small load to the CPU.  
 Specifically designed for the RP2040 it has been tested on RP2040-Zero. (RP2040 Arduino Earle F. Philhower core 6.3.1)   
 Up to 4 PPM streams can be managed on the same processor.  
