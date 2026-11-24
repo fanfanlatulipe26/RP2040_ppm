@@ -45,8 +45,13 @@ Channel numbering is from 1 to n and index 0 of the array is used internally.
 *No checks* are done upon the values of the ppm channels. (usual values are between 1000 and 2000 us …), nor the channel number.  
 **start()**   
 start the PPM generation.    
+**startTest(incr)**	  
+start the PPM generation for test purpose: 
+* in each PPM frame, the value of each channel is the same.  
+* This value is incremented by the value incr (default is 1) for each frame, changing from 1000us to 1999us and so on.
+  
 **stop()**  
-  stop the PPM generation. It can be resumed with **start()**   
+  stop the PPM generation. It can be resumed with **start()** or **startTest()**
 **end()**  
   stop the PPM generation and free resources. The PPM stream must be reinitialized with a **begin(….)** before use.  
 ### Receiving PPM Encoded Signals
@@ -80,6 +85,10 @@ start the PPM decoding.
 stop the PPM decoding. It can be resumed with **start()**.  
 **end()**  
 stop the PPM decoding and free resources. The PPM stream must be reinitialized with a **begin(….)** before use.   
+**newFrame()**  
+returns a *bool* the value is **TRUE** if a new frame has been received since the last call to **newFrame()**.   
+Return **FALSE** if the application already queries **newFrame()** for the same frame.  
+This function can be used to synchronize the application if need be.   
 
 <a name="tuning"> 
  
