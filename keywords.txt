@@ -5,15 +5,16 @@
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
-ppmWriter  KEYWORD1
-ppmChannels_t  KEYWORD1
+ppmWriter	KEYWORD1
+ppmReader	KEYWORD1
+ppmChannels_t	KEYWORD1
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 begin	KEYWORD2
 start	KEYWORD2
+startTest	KEYWORD2
 stop	KEYWORD2
 end	KEYWORD2
+newFrame	KEYWORD2
 setChannel	KEYWORD2
-
-
